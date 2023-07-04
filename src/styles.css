@@ -1,0 +1,59 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    background: radial-gradient(ellipse at bottom, #5579cc 30%, #29c6a5 70%, transparent);
+    background: radial-gradient(circle at top, #5579cc 50%, #29c6a5 100%, transparent);
+    background-attachment: fixed;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    color: #df1;
+}
+
+.searchBar {
+    width: 400px;
+    height: 10px;
+    color: #333;
+    padding: 15px;
+    border: none;
+    border-radius: 7px;
+    outline: 2px inset #df1;
+    font-size: 18px;
+    background-color: #f5f5f5;
+}
+
+.btn {
+    width: 70px;
+    height: 35px;
+    color: #434;
+    padding: 10px;
+    margin-left: 4px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 5px 2px;
+    outline: outset #29c6a5;
+}
+
+.dailyForecast {
+    list-style: none;
+    padding-left: 0;
+}
+
+.weekDay {
+    display: inline-block;
+    width: 100px;
+    height: 150px;
+    padding: 10px;
+    margin: 10px 3px;
+    font-size: 16px;
+    box-shadow: 2px 2px 1px #f5f5f5;
+    border: 1px outset #df1;
+    border-radius: 10px;
+    background: radial-gradient(ellipse at top left, #1260cc, #5579c6);
+}
