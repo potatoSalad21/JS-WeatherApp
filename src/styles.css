@@ -49,8 +49,8 @@ h1 {
 }
 
 .scaleSwitch:focus {
-    border: 2px solid rgba(233, 233, 49, 0.384);
-    background-color: rgba(233, 233, 49, 0.384);
+    border: 2px solid rgba(233, 233, 49, 0.432);
+    background-color: rgba(233, 233, 49, 0.554);
 }
 
 .dailyForecast {
