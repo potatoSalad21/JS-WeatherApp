@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-export default function SearchForm({ data, updateForecasts }) {
+export default function SearchForm({ updateForecasts }) {
   const [cityName, setCityName] = useState("");
 
   function handleSearch(e) {
@@ -38,7 +38,6 @@ export default function SearchForm({ data, updateForecasts }) {
         onChange={(e) => setCityName(e.target.value)}
       />
       <input className="button" type="submit" value="Search" />
-      <div className="testing">{data[0]?.Temperature.Maximum.Value}</div>
     </form>
   );
 }
