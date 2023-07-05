@@ -1,4 +1,4 @@
-export default function WeekDay({ forecastForDay }) {
+export default function WeekDay({ forecastForDay, celsiusToggled }) {
   const weekDays = [
     "Sun",
     "Mon",
@@ -8,15 +8,19 @@ export default function WeekDay({ forecastForDay }) {
     "Fri",
     "Sat",
   ];
+
+  function convertToCel(temp) {
+    return Math.round((temp - 32) * 5 / 9);
+  }
   
-  console.dir(forecastForDay)
   let date = new Date(forecastForDay.Date);
   const day = weekDays[date.getDay()];
   
   const dayPhrase = forecastForDay.Day.IconPhrase;
 
-  let maxTemp = Math.round((forecastForDay.Temperature.Maximum.Value - 32) * 5 / 9);
-  let minTemp = Math.round((forecastForDay.Temperature.Minimum.Value - 32) * 5 / 9);
+  const temp = forecastForDay.Temperature;
+  let maxTemp = celsiusToggled ? convertToCel(temp.Maximum.Value) : temp.Maximum.Value;
+  let minTemp = celsiusToggled ? convertToCel(temp.Minimum.Value) : temp.Minimum.Value;
 
   return (
     <li className="weekDay">

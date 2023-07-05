@@ -39,6 +39,20 @@ h1 {
     background-color: rgba(233, 233, 49, 0.554);
 }
 
+.scaleSwitch {
+    display: inline-block;
+    width: 3%;
+    height: 55px;
+    border: 2px solid rgba(233, 233, 49, 0.384);
+    border-radius: 100px;
+    background-color: rgba(233, 233, 49, 0.384);
+}
+
+.scaleSwitch:focus {
+    border: 2px solid rgba(233, 233, 49, 0.384);
+    background-color: rgba(233, 233, 49, 0.384);
+}
+
 .dailyForecast {
     height: 50%;
     width: 50%;
