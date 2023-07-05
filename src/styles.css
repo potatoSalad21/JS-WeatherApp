@@ -45,6 +45,7 @@ h1 {
 }
 
 li {
+    display: flex;
     list-style: none;
     padding-top: 20px;
     height: 110px;
