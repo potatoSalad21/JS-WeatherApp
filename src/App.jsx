@@ -1,22 +1,22 @@
 import { useState } from "react";
+import SearchForm from "./components/SearchForm.jsx";
 import "./styles.css";
 
 export default function App() {
-  const [value, setValue] = useState("");
+  const [forecasts, setForecasts] = useState({});
+
+  function updateData(data) {
+    if (data) {
+      setForecasts(data);
+    }
+  }
 
   return (
     <>
       <h1 className="header">Weather App</h1>
-      <form>
-        <input
-          className="searchBar"
-          type="text"
-          placeholder="city name"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <input className="btn" type="submit" value="Search" />
-      </form>
+
+      <SearchForm data={forecasts} updateForecasts={updateData} />
+
       <ul className="dailyForecast">
         <li className="weekDay">day 1</li>
         <li className="weekDay">day 2</li>
