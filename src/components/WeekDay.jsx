@@ -21,7 +21,7 @@ export default function WeekDay({ forecastForDay, celsiusToggled }) {
 
   const dayPhrase = forecastForDay.Day.IconPhrase;
   let weatherLogo = null;
-  
+
   switch (true) {
     case (/storm/i.test(dayPhrase)):
       weatherLogo = stormLogo;
@@ -42,7 +42,7 @@ export default function WeekDay({ forecastForDay, celsiusToggled }) {
 
   let date = new Date(forecastForDay.Date);
   const day = weekDays[date.getDay()];
-  
+
   const temp = forecastForDay.Temperature;
   let maxTemp = celsiusToggled ? convertToCel(temp.Maximum.Value) + "°C": temp.Maximum.Value + "°F";
   let minTemp = celsiusToggled ? convertToCel(temp.Minimum.Value) + "°C": temp.Minimum.Value + "°F";
