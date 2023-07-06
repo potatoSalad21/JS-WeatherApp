@@ -1,14 +1,23 @@
-import { useState, useReducer } from "react";
+import { useState, useReducer, useEffect } from "react";
 import SearchForm from "./SearchForm.jsx";
 import WeeklyReport from "./WeeklyReport.jsx";
 import ScaleSwitch from "./scaleSwitch.jsx";
 import "../styles.css";
 
 export default function App() {
-  const [forecasts, setForecasts] = useState({});
+  const [forecasts, setForecasts] = useState(() => {
+    const localValue = localStorage.getItem("forecasts");
+    if (!localValue) return {};
+
+    return JSON.parse(localValue);
+  });
   const [celsius, toggle] = useReducer((celsius) => !celsius, false);
 
-  function updateData(data) {
+  useEffect(() => {
+    localStorage.setItem("forecasts", JSON.stringify(forecasts));
+  }, [forecasts]);
+
+  const updateData = (data) => {
     data ? setForecasts(data) : setForecasts({});
   }
 
