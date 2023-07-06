@@ -6,7 +6,7 @@ import "../styles.css";
 
 export default function App() {
   const [forecasts, setForecasts] = useState(() => {
-    const localValue = localStorage.getItem("forecasts");
+    const localValue = sessionStorage.getItem("forecasts");
     if (!localValue) return {};
 
     return JSON.parse(localValue);
@@ -14,7 +14,7 @@ export default function App() {
   const [celsius, toggle] = useReducer((celsius) => !celsius, false);
 
   useEffect(() => {
-    localStorage.setItem("forecasts", JSON.stringify(forecasts));
+    sessionStorage.setItem("forecasts", JSON.stringify(forecasts));
   }, [forecasts]);
 
   const updateData = (data) => {
