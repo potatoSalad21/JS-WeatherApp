@@ -1,8 +1,8 @@
 import { useState, useReducer } from "react";
-import SearchForm from "./components/SearchForm.jsx";
-import WeeklyReport from "./components/WeeklyReport.jsx";
-import ScaleSwitch from "./components/scaleSwitch.jsx";
-import "./styles.css";
+import SearchForm from "./SearchForm.jsx";
+import WeeklyReport from "./WeeklyReport.jsx";
+import ScaleSwitch from "./scaleSwitch.jsx";
+import "../styles.css";
 
 export default function App() {
   const [forecasts, setForecasts] = useState({});
