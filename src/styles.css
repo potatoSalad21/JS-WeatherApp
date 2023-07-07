@@ -2,8 +2,22 @@ html {
     padding-left: 5%;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgb(125, 100, 50);
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(196, 155, 20, 0.829);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(198, 201, 46, 0.726);
+}
+
 body {
-    background: linear-gradient(90deg, rgb(34,193,195) 0%, rgb(253,187,45) 100%);
+    background: linear-gradient(90deg, rgb(34, 193, 195) 0%, rgb(253, 187, 45) 100%);
 }
 
 h1 {
@@ -18,7 +32,7 @@ h1 {
     width: 25%;
     height: 50px;
     font-size: 15px;
-    color: rgba(58, 58, 52, 0.781);
+    color: rgba(58, 58, 52, 0.855);
     background-color: rgba(249, 249, 54, 0.119);
     outline-color: transparent;
     border-radius: 100px 0px 0px 100px;
@@ -40,7 +54,6 @@ h1 {
 }
 
 .scaleSwitch {
-    display: inline-block;
     width: 3%;
     height: 55px;
     border: 2px solid rgba(233, 233, 49, 0.384);

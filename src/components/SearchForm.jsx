@@ -24,7 +24,7 @@ export default function SearchForm({ updateForecasts }) {
       } catch (error) {
         console.error(error);
       }
-    }
+    };
     fetchData();
   }
 

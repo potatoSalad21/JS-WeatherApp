@@ -19,15 +19,17 @@ export default function App() {
 
   const updateData = (data) => {
     data ? setForecasts(data) : setForecasts({});
-  }
+  };
 
   return (
     <>
       <h1 className="header">Weather App</h1>
 
-      <SearchForm updateForecasts={updateData} />
-      <ScaleSwitch toggle={toggle} />
-      <WeeklyReport forecastForWeek={forecasts} celsiusToggled={celsius} />
+      <section id="inputSection">
+        <SearchForm updateForecasts={updateData} />
+        <ScaleSwitch toggle={toggle} />
+      </section>
+        <WeeklyReport forecastForWeek={forecasts} celsiusToggled={celsius} />
     </>
   );
 }
