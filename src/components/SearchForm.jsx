@@ -4,29 +4,26 @@ import { useState } from "react";
 export default function SearchForm({ updateForecasts }) {
   const [cityName, setCityName] = useState("");
 
-  function handleSearch(e) {
+  const handleSearch = async (e) => {
     e.preventDefault();
 
-    const fetchData = async () => {
-      try {
-        const cityLocation = await axios.get(
-          "http://dataservice.accuweather.com/locations/v1/cities/search",
-          { params: { apikey: "QybnM0n3fiE9MdI0PgsphdJ5pnIlQQZK", q: cityName } } // intentional
-        );
-        const cityKey = cityLocation.data[0].Key;
+    try {
+      const cityLocation = await axios.get(
+        "http://dataservice.accuweather.com/locations/v1/cities/search",
+        { params: { apikey: "QybnM0n3fiE9MdI0PgsphdJ5pnIlQQZK", q: cityName } } // intentional
+      );
+      const cityKey = cityLocation.data[0].Key;
 
-        const weatherJson = await axios.get(
-          `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}`,
-          { params: { apikey: "QybnM0n3fiE9MdI0PgsphdJ5pnIlQQZK" } }
-        );
-        const forecasts = weatherJson.data.DailyForecasts;
-        updateForecasts(forecasts);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }
+      const weatherJson = await axios.get(
+        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}`,
+        { params: { apikey: "QybnM0n3fiE9MdI0PgsphdJ5pnIlQQZK" } }
+      );
+      const forecasts = weatherJson.data.DailyForecasts;
+      updateForecasts(forecasts);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -41,6 +38,5 @@ export default function SearchForm({ updateForecasts }) {
         <input className="button" type="submit" value="Search" />
       </form>
     </>
-
   );
 }
