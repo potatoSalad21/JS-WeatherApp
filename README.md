@@ -1,5 +1,4 @@
 # 5 day Weather Forecast
 
-## A simple weather app created with react.js
+## A simple weather app created with react.js and Vite
 
-* P.S the app was created purely for improving my react skills
